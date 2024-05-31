@@ -3,7 +3,7 @@
 let arr = ["ROCK", "PAPER", "SCISSORS"];
 let humanScore = 0;
 let computerScore = 0;
-let round = 5;
+
 
 function getComputerChoice(){
 
@@ -30,42 +30,42 @@ function playRound(humanChoice, computerChoice){
         console.log("It's a Draw");
     }
     else if (humanChoice === "ROCK" && computerChoice === "SCISSORS"){
-        humanScore++
+        humanScore++;
         console.log("You Win! Rock beats Scissors");
         
     }
     else if(humanChoice === "ROCK" && computerChoice === "PAPER"){
-        computerScore++
+        computerScore++;
         console.log("You Lose! Paper beats Rock" );
         
     }
     else if(computerChoice === "ROCK" && humanChoice === "PAPER"){
-        humanScore++
+        humanScore++;
         console.log("You Win! Paper beats Rock");
         
     }
     else if(computerChoice === "ROCK" && humanChoice === "SCISSOR"){
-        computerScore++
+        computerScore++;
         console.log("You Lose! Rock beats Paper");
         
     }
     else if(humanChoice === "SCISSOR" && computerChoice === "PAPER"){
-        humanScore++
+        humanScore++;
         console.log("You Win! Scissor beat Paper");
         
     }
     else if(humanChoice === "SCISSOR" && computerChoice === "ROCK"){
-        computerScore++
+        computerScore++;
         console.log("You Lose! Rock beats Scissors");
         
     }
     else if(humanChoice === "PAPER" && computerChoice === "ROCK"){
-        humanScore++
+        humanScore++;
         console.log("You Win! Paper beats Rock");
         
     }
     else if(humanChoice === "PAPER" && computerChoice === "SCISSOR"){
-        computerScore++
+        computerScore++;
         console.log("You Lose! SCISSORS beats PAPER");
         
     }
@@ -74,12 +74,6 @@ function playRound(humanChoice, computerChoice){
 };
 
 
-
-
-
-
-//const humanSelection = getHumanChoice();
-//const computerSelection = getComputerChoice();
 
 
 
@@ -93,8 +87,6 @@ playRound(getHumanChoice(), getComputerChoice());
 
 
 };
-
-
 
 
 playGame();
