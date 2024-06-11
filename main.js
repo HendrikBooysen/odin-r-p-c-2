@@ -77,7 +77,7 @@ function playRound(humanChoice, computerChoice){
 
 
 
-function playGame(){
+/*function playGame(){
 
 playRound(getHumanChoice(), getComputerChoice());
 playRound(getHumanChoice(), getComputerChoice());
@@ -89,4 +89,4 @@ playRound(getHumanChoice(), getComputerChoice());
 };
 
 
-playGame();
+playGame();*/
