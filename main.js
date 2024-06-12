@@ -5,6 +5,15 @@ let humanScore = 0;
 let computerScore = 0;
 
 
+const buttons = document.querySelectorAll('button');
+
+const display = document.querySelector('#display');
+
+const humanScoreDisplay = document.createElement("p");
+humanScoreDisplays.textContent += humanScore;
+display.appendChild(humanScoreDisplay);
+
+
 function getComputerChoice(){
 
 return(arr[(Math.floor(Math.random() * arr.length))]);
@@ -73,7 +82,7 @@ function playRound(humanChoice, computerChoice){
 
 };
 
-const buttons = document.querySelectorAll('button');
+
 
 
 
@@ -81,7 +90,13 @@ const buttons = document.querySelectorAll('button');
 
         button.addEventListener("click", () => {
 
-            console.log(button.id);
+            if(button.id === "ROCK"){
+                playRound("ROCK", getComputerChoice());
+            }else if(button.id === "PAPER"){
+                playRound("PAPER", getComputerChoice());
+            }else if(button.id === "SCISSOR"){
+                playRound("SCISSOR", getComputerChoice());
+            }
 
         });
 
@@ -90,16 +105,4 @@ const buttons = document.querySelectorAll('button');
   
 
 
-/*function playGame(){
 
-playRound(getHumanChoice(), getComputerChoice());
-playRound(getHumanChoice(), getComputerChoice());
-playRound(getHumanChoice(), getComputerChoice());
-playRound(getHumanChoice(), getComputerChoice());
-playRound(getHumanChoice(), getComputerChoice());
-
-
-};
-
-
-playGame();*/
