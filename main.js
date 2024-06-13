@@ -13,10 +13,13 @@ buttons.forEach((button) => {
 
         if(button.id === "ROCK"){
             playRound("ROCK", getComputerChoice());
+            getWinner();
         }else if(button.id === "PAPER"){
             playRound("PAPER", getComputerChoice());
+            getWinner();
         }else if(button.id === "SCISSOR"){
             playRound("SCISSORS", getComputerChoice());
+            getWinner();
         }
 
     });
@@ -28,10 +31,15 @@ const display = document.getElementById("display");
 const humanScoreDisplay = document.createElement("p");
 display.appendChild(humanScoreDisplay);
 
+const computerScoreDisplay = document.createElement("p");
+display.appendChild(computerScoreDisplay);
+
 
 const resultDisplay = document.createElement("p");
-resultDisplay.textContent = "";
 display.appendChild(resultDisplay);
+
+const winnerDisplay = document.createElement("p");
+display.appendChild(winnerDisplay);
 
 
 function getComputerChoice(){
@@ -56,57 +64,67 @@ function playRound(humanChoice, computerChoice){
     
 
     if(humanChoice === computerChoice || computerChoice === humanChoice) {
-        return(resultDisplay.textContent = "It's a Draw");
+        resultDisplay.textContent = "It's a Draw";
     }
     else if (humanChoice === "ROCK" && computerChoice === "SCISSORS"){
         humanScore++
         humanScoreDisplay.textContent = "Human Score : " + humanScore;
-        return(resultDisplay.textContent = "You Win! Rock beats Scissors");
+        resultDisplay.textContent = "You Win! Rock beats Scissors";
         
     }
     else if(humanChoice === "ROCK" && computerChoice === "PAPER"){
         computerScore++
-        return(resultDisplay.textContent = "You Lose! Paper beats Rock" );
+        resultDisplay.textContent = "You Lose! Paper beats Rock";
+        computerScoreDisplay.textContent = "Computer Score : " + computerScore;
         
     }
     else if(computerChoice === "ROCK" && humanChoice === "PAPER"){
         humanScore++
         humanScoreDisplay.textContent = "Human Score : " + humanScore;
-        return(resultDisplay.textContent = "You Win! Paper beats Rock");
+        resultDisplay.textContent = "You Win! Paper beats Rock";
         
     }
     else if(computerChoice === "ROCK" && humanChoice === "SCISSORS"){
         computerScore++
-        return(resultDisplay.textContent = "You Lose! Rock beats Scissors");
+        computerScoreDisplay.textContent = "Computer Score : " + computerScore;
+        resultDisplay.textContent = "You Lose! Rock beats Scissors";
         
     }
     else if(humanChoice === "SCISSORS" && computerChoice === "PAPER"){
         humanScore++
         humanScoreDisplay.textContent =  "Human Score : " + humanScore;
-        return(resultDisplay.textContent = "You Win! Scissors beat Paper");
+        resultDisplay.textContent = "You Win! Scissors beat Paper";
         
     }
     else if(humanChoice === "SCISSORS" && computerChoice === "ROCK"){
         computerScore++
-        return(resultDisplay.textContent = "You Lose! Rock beats Scissors");
+        computerScoreDisplay.textContent = "Computer Score : " + computerScore;
+        resultDisplay.textContent = "You Lose! Rock beats Scissors";
         
     }
     else if(humanChoice === "PAPER" && computerChoice === "ROCK"){
         humanScore++
         humanScoreDisplay.textContent = "Human Score : " + humanScore;
-        return(resultDisplay.textContent = "You Win! Paper beats Rock");
+        resultDisplay.textContent = "You Win! Paper beats Rock";
         
     }
     else if(humanChoice === "PAPER" && computerChoice === "SCISSORS"){
         computerScore++
-        return(resultDisplay.textContent = "You Lose! Scissors beats PAPER");
+        computerScoreDisplay.textContent = "Computer Score : " + computerScore;
+        resultDisplay.textContent = "You Lose! Scissors beats PAPER";
         
     }
 
 
 };
 
-
+function getWinner(){
+    if(humanScore >= 5){
+        winnerDisplay.textContent = "You Win! Best of 5";
+    }else if(computerScore >= 5){
+        winnerDisplay.textContent = "You Close! Best of 5";
+    }
+};
 
 
 
